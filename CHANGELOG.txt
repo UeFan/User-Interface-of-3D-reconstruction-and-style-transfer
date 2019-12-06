@@ -1,0 +1,87 @@
+COLMAP 3.1 (6/15/2017)
+----------------------
+- Add fast spatial verification to image retrieval module
+- Add binary file format for sparse models by default. Old text format still
+  fully compatible and possible conversion in GUI and CLI
+- Add cross-platform little endian binary file reading and writing
+- Faster and less memory hungry stereo fusion by computing consistency on demand
+  and possible limitation of image size in fusion
+- Simpler geometric stereo processing interface.
+  Now geometric stereo output can be computed using a single pass
+- Faster and multi-architecture CUDA compilation
+- Add medium quality option in automatic reconstructor
+- Many more bug fixes and improvements
+
+
+COLMAP 3.0 (5/22/2017)
+----------------------
+- Add automatic end-to-end reconstruction tool that automatically performs
+  sparse and dense reconstruction on a given set of images
+- Add multi-GPU dense stereo if multiple CUDA devices are available
+- Add multi-GPU feature matching if multiple CUDA devices are available
+- Add Manhattan-world / gravity alignment using line detection
+- Add CUDA-based feature extraction useful for usage on clusters
+- Add CPU-based feature matching for machines without GPU
+- Add new THIN_PRISM_FISHEYE camera model with tangential/radial correction
+- Add binary to triangulate existing/empty sparse reconstruction
+- Add binary to print summary statistics about sparse reconstruction
+- Add transitive feature matching to transitively complete match graph
+- Improved scalability of dense reconstruction by using caching
+- More stable GPU-based feature matching with informative warnings
+- Faster vocabulary tree matching using dynamic scheduling in FLANN
+- Faster spatial feature matching using linear index instead of kd-tree
+- More stable camera undistortion using numerical Newton iteration
+- Improved option parsing with some backwards incompatible option renaming
+- Faster compile times by optimizing includes and CUDA flags
+- More stable view selection for small baseline scenario in dense reconstruction
+- Many more bug fixes and improvements
+
+
+COLMAP 2.1 (12/7/2016)
+----------------------
+- Support to only index and match specific images in vocabulary tree matching
+- Support to perform image retrieval using vocabulary tree
+- Several bug fixes and improvements for multi-view stereo module
+- Improved Structure-from-Motion initialization strategy
+- Support to only reconstruct the scene using specific images in the database
+- Add support to merge two models using overlapping registered images
+- Add support to geo-register/align models using known camera locations
+- Support to only extract specific images in feature extraction module
+- Support for snapshot model export during reconstruction
+- Skip already undistorted images if they exist in output directory
+- Support to limit the number of features in image retrieval for improved speed
+- Miscellaneous bug fixes and improvements
+
+
+COLMAP 2.0 (9/8/2016)
+---------------------
+- Implementation of dense reconstruction pipeline
+- Improved feature matching performance
+- New bundle adjuster for rigidly mounted multi-camera systems
+- New generalized absolute pose solver for multi-camera systems
+- New executable to extract colors from all images
+- Boost can now be linked in shared and static mode
+- Various bug fixes and performance improvements
+
+
+COLMAP 1.1 (5/19/2016)
+----------------------
+- Implementation of state-of-the-art image retrieval system using Hamming
+  embedding for vocabulary tree matching. This should lead to much improved
+  matching results as compared to the previous implementation.
+- Guided matching as an optional functionality.
+- New demo datasets for download.
+- Automatically switch to PBA if supported by the project.
+- Implementation of EPNP solver for local pose optimization in RANSAC.
+- Add option to extract upright SIFT features.
+- Saving JPEGs in superb quality by default in export.
+- Add option to clear matches and inlier matches in the project.
+- New fisheye camera models, including the FOV camera model used by Google
+  Project Tango (Thomas Schoeps).
+- Extended documentation based on user feedback.
+- Fixed typo in documentation (Thomas Schoeps).
+
+
+COLMAP 1.0 (4/4/2016)
+---------------------
+- Initial release of COLMAP.
